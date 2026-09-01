@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Choisissez votre design · Profilo</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Work+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .cv-layout { display: grid; gap: 2.5rem; margin-top: 3rem; }
+    @media (min-width: 1024px) { .cv-layout { grid-template-columns: 1fr auto; } .preview-col { position: sticky; top: 6rem; align-self: start; } }
+    .preview-frame { box-shadow: var(--glow-strong); border: 1px solid var(--border); border-radius: 0.75rem; background: rgba(243,242,240,0.5); padding: 1rem; }
+    .preview-frame .a4 { width: min(420px, 82vw); }
+    #toast {
+      position: fixed; top: 4.5rem; left: 50%; transform: translate(-50%, -20px); z-index: 90;
+      background: #fff; border: 1px solid rgba(6,182,212,0.4); border-radius: 0.75rem; box-shadow: var(--glow-strong);
+      padding: 0.9rem 1.25rem; font-size: 0.875rem; opacity: 0; pointer-events: none;
+      transition: opacity 0.3s ease, transform 0.3s ease; max-width: 90vw;
+    }
+    #toast.show { opacity: 1; transform: translate(-50%, 0); }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="wrap">
+      <a class="logo" href="ats.html">Profilo<span>.</span></a>
+      <div class="header-actions">
+        <span class="mono" style="font-size:0.7rem;color:var(--mute);display:none" id="expiry">CV de Camille Moreau · expire dans <b style="color:var(--amber)">23 h 41</b></span>
+        <button class="btn btn-primary btn-sm" onclick="download()" data-testid="download-pdf-button">⤓ Télécharger le PDF</button>
+      </div>
+    </div>
+  </header>
+
+  <nav class="journey" data-testid="journey-progress" aria-label="Progression">
+    <div class="wrap">
+      <ol>
+        <li class="done"><span class="n">01</span><span class="lbl">Analyser</span><span class="bar"><i></i></span></li>
+        <li class="done"><span class="n">02</span><span class="lbl">Comprendre</span><span class="bar"><i></i></span></li>
+        <li class="active"><span class="n">03</span><span class="lbl">Choisir</span><span class="bar"><i></i></span></li>
+        <li><span class="n">04</span><span class="lbl">Télécharger</span><span class="bar"><i></i></span></li>
+      </ol>
+    </div>
+  </nav>
+
+  <main class="wrap section">
+    <p class="eyebrow reveal">Étape 03 — Choisir</p>
+    <h1 class="reveal d1" style="font-size:clamp(1.75rem,4vw,2.5rem);font-weight:700;margin-top:0.75rem">Choisissez votre design.</h1>
+    <p class="sub reveal d2">Six templates vectoriels, pensés pour les ATS et les recruteurs. Le contenu optimisé reste identique — seule la forme change.</p>
+
+    <div class="cv-layout">
+      <div class="gallery grid-lg reveal d2" role="radiogroup" aria-label="Designs de CV">
+        <button class="tpl-card" aria-pressed="true" data-tpl="paris" data-testid="cv-template-paris"><div class="a4 tpl-paris"><div class="doc-header"><p class="doc-name">Camille Moreau</p><p class="doc-role">Product Ops</p></div><div class="pad"><span class="bar"></span><span class="bar" style="width:82%"></span><span class="bar" style="width:88%"></span><span class="bar" style="width:60%"></span><span class="bar" style="width:75%"></span></div></div><div class="meta"><span><b>Paris</b><br><small style="color:var(--mute)">L'élégant</small></span><span class="check">✓</span></div></button>
+        <button class="tpl-card" aria-pressed="false" data-tpl="london" data-testid="cv-template-london"><div class="a4 tpl-london"><div class="side"><div class="doc-header"><p class="doc-name">C. Moreau</p></div><span class="bar"></span><span class="bar" style="width:70%"></span><span class="bar" style="width:55%"></span></div><div class="main"><span class="bar"></span><span class="bar" style="width:85%"></span><span class="bar" style="width:65%"></span><span class="bar" style="width:80%"></span></div></div><div class="meta"><span><b>London</b><br><small style="color:var(--mute)">Le structuré</small></span><span class="check">✓</span></div></button>
+        <button class="tpl-card" aria-pressed="false" data-tpl="tokyo" data-testid="cv-template-tokyo"><div class="a4 tpl-tokyo"><div class="doc-header"><p class="doc-name">Camille Moreau</p></div><div class="pad"><span class="bar"></span><span class="bar" style="width:75%"></span><span class="bar" style="width:88%"></span><span class="bar" style="width:55%"></span></div></div><div class="meta"><span><b>Tokyo</b><br><small style="color:var(--mute)">Le minimal</small></span><span class="check">✓</span></div></button>
+        <button class="tpl-card" aria-pressed="false" data-tpl="stockholm" data-testid="cv-template-stockholm"><div class="a4 tpl-stockholm"><div class="doc-header"><p class="doc-name">Camille Moreau</p></div><div class="pad"><span class="bar"></span><span class="bar" style="width:82%"></span><span class="bar" style="width:68%"></span><span class="bar" style="width:90%"></span></div></div><div class="meta"><span><b>Stockholm</b><br><small style="color:var(--mute)">Le fonctionnel</small></span><span class="check">✓</span></div></button>
+        <button class="tpl-card" aria-pressed="false" data-tpl="berlin" data-testid="cv-template-berlin"><div class="a4 tpl-berlin"><div class="doc-header"><p class="doc-name">Camille Moreau</p></div><div class="stripe"></div><div class="pad"><span class="bar"></span><span class="bar" style="width:78%"></span><span class="bar" style="width:86%"></span><span class="bar" style="width:62%"></span></div></div><div class="meta"><span><b>Berlin</b><br><small style="color:var(--mute)">L'affirmé</small></span><span class="check">✓</span></div></button>
+        <button class="tpl-card" aria-pressed="false" data-tpl="milan" data-testid="cv-template-milan"><div class="a4 tpl-milan"><div class="doc-header"><p class="doc-name">Camille Moreau</p></div><div class="pad"><span class="bar"></span><span class="bar" style="width:70%"></span><span class="bar" style="width:85%"></span><span class="bar" style="width:58%"></span><span class="bar" style="width:80%"></span></div></div><div class="meta"><span><b>Milan</b><br><small style="color:var(--mute)">Le raffiné</small></span><span class="check">✓</span></div></button>
+      </div>
+
+      <div class="preview-col reveal d3" data-testid="cv-live-preview">
+        <p class="mono" style="display:flex;justify-content:space-between;font-size:0.7rem;text-transform:uppercase;letter-spacing:0.2em;color:var(--mute);margin-bottom:1rem">
+          <span>Aperçu live</span><span id="preview-label" style="color:var(--violet)">Paris — L'élégant</span>
+        </p>
+        <div class="preview-frame">
+          <div class="a4 tpl-paris" id="live-doc">
+            <div class="doc-header"><p class="doc-name">Camille Moreau</p><p class="doc-role">Product Ops Manager</p><span class="bar light" style="width:65%"></span></div>
+            <div class="pad">
+              <div><div class="doc-sec"><i></i><b>Profil</b></div><span class="bar"></span><span class="bar" style="width:92%"></span><span class="bar" style="width:66%"></span></div>
+              <div><div class="doc-sec"><i></i><b>Expérience</b></div><span class="bar" style="width:55%"></span><span class="bar" style="width:88%"></span><span class="bar" style="width:78%"></span><span class="bar" style="width:48%"></span><span class="bar" style="width:84%"></span></div>
+              <div><div class="doc-sec"><i></i><b>Compétences</b></div><span class="bar" style="width:80%"></span></div>
+              <div><div class="doc-sec"><i></i><b>Formation</b></div><span class="bar" style="width:58%"></span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <div id="toast" role="status">✓ Votre CV est prêt. Gardez ce lien : il reste disponible 24 h.</div>
+
+  <footer class="footer">
+    <div class="wrap">
+      <a class="logo" href="ats.html">Profilo<span>.</span></a>
+      <p>Écran « Choisir » — galerie 6 designs · Données fictives</p>
+    </div>
+  </footer>
+
+  <script>
+    var labels = { paris: "Paris — L'élégant", london: "London — Le structuré", tokyo: "Tokyo — Le minimal", stockholm: "Stockholm — Le fonctionnel", berlin: "Berlin — L'affirmé", milan: "Milan — Le raffiné" };
+    var doc = document.getElementById('live-doc');
+    document.querySelectorAll('.tpl-card').forEach(function (card) {
+      card.addEventListener('click', function () {
+        document.querySelectorAll('.tpl-card').forEach(function (c) { c.setAttribute('aria-pressed', 'false'); });
+        card.setAttribute('aria-pressed', 'true');
+        var tpl = card.getAttribute('data-tpl');
+        doc.className = 'a4 tpl-' + tpl;
+        document.getElementById('preview-label').textContent = labels[tpl];
+      });
+    });
+    function download() {
+      var t = document.getElementById('toast');
+      t.classList.add('show');
+      setTimeout(function () { t.classList.remove('show'); }, 4000);
+    }
+    if (window.innerWidth >= 768) { document.getElementById('expiry').style.display = 'inline'; }
+  </script>
+  <button class="theme-toggle" id="theme-toggle" aria-label="Changer de thème" data-testid="theme-toggle">☾</button>
+  <script>
+    (function(){var b=document.getElementById('theme-toggle');function apply(t){document.documentElement.setAttribute('data-theme',t);localStorage.setItem('profilo-theme',t);b.textContent=t==='dark'?'☀':'☾';}apply(localStorage.getItem('profilo-theme')||'light');b.addEventListener('click',function(){apply(document.documentElement.getAttribute('data-theme')==='dark'?'light':'dark');});})();
+  </script>
+</body>
+</html>

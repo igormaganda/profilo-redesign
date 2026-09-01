@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Direction B — Studio progressif · Profilo</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Work+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="wrap">
+      <a class="logo" href="ats.html">Profilo<span>.</span></a>
+      <div class="header-actions">
+        <nav class="direction-toggle" data-testid="direction-toggle">
+          <a href="audit-a.html" data-testid="direction-toggle-a">Direction A</a>
+          <a href="audit-b.html" class="on" data-testid="direction-toggle-b">Direction B</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <nav class="journey" data-testid="journey-progress" aria-label="Progression">
+    <div class="wrap">
+      <ol>
+        <li class="done"><span class="n">01</span><span class="lbl">Analyser</span><span class="bar"><i></i></span></li>
+        <li class="active"><span class="n">02</span><span class="lbl">Comprendre</span><span class="bar"><i></i></span></li>
+        <li><span class="n">03</span><span class="lbl">Choisir</span><span class="bar"><i></i></span></li>
+        <li><span class="n">04</span><span class="lbl">Télécharger</span><span class="bar"><i></i></span></li>
+      </ol>
+    </div>
+  </nav>
+
+  <!-- Mobile tabs -->
+  <div class="tabs" role="tablist" aria-label="Vue rapport">
+    <button class="tab" id="tab-diag" role="tab" aria-selected="true" data-testid="tab-diagnostic">Diagnostic</button>
+    <button class="tab" id="tab-cv" role="tab" aria-selected="false" data-testid="tab-cv">Mon CV</button>
+  </div>
+
+  <main class="wrap">
+    <div class="studio">
+
+      <!-- PANEL DIAGNOSTIC -->
+      <section class="panel tab-panel show" id="panel-diag" data-testid="diagnostic-panel">
+        <div style="display:flex;align-items:center;gap:1.5rem">
+          <div class="ring-wrap" data-testid="score-ring">
+            <svg width="120" height="120">
+              <circle cx="60" cy="60" r="55" stroke="#EAE7E1" stroke-width="9" fill="none" />
+              <circle class="ring-anim" cx="60" cy="60" r="55" stroke="#7053cd" stroke-width="9" fill="none" stroke-linecap="round" style="--off:131;stroke-dasharray:346;stroke-dashoffset:346" />
+            </svg>
+            <div class="val"><b style="font-size:2rem">62</b><small>/ 100</small></div>
+          </div>
+          <div>
+            <p class="eyebrow">Verdict</p>
+            <h1 style="font-size:1.375rem;font-weight:700;margin-top:0.5rem">Votre CV matche à 62 % avec cette offre.</h1>
+            <p class="mono" style="font-size:0.62rem;text-transform:uppercase;letter-spacing:0.12em;color:var(--mute);margin-top:0.35rem">Product Ops Manager — Spendesk</p>
+          </div>
+        </div>
+
+        <div style="margin-top:2rem">
+          <h2 style="font-size:0.875rem;font-weight:600">Top 3 des écarts</h2>
+          <div class="gap-item"><span class="dot">01</span><div><b>SQL absent des compétences</b><p>L'offre le mentionne 4 fois — votre CV, zéro.</p></div></div>
+          <div class="gap-item"><span class="dot">02</span><div><b>Résumé trop générique (45 / 100)</b><p>Il ne cite ni le rôle visé, ni vos chiffres clés.</p></div></div>
+          <div class="gap-item"><span class="dot">03</span><div><b>Réalisations non chiffrées</b><p>2 expériences sur 3 sans aucun résultat mesurable.</p></div></div>
+        </div>
+
+        <div style="margin-top:2rem">
+          <h2 style="font-size:0.875rem;font-weight:600">Mots-clés manquants <span class="mono" style="color:var(--amber);font-size:0.75rem">8</span></h2>
+          <div class="chips">
+            <span class="chip chip-missing">+ SQL</span><span class="chip chip-missing">+ Python</span><span class="chip chip-missing">+ Tableau</span><span class="chip chip-missing">+ SEO</span><span class="chip chip-missing">+ Budget</span><span class="chip chip-missing">+ Jira</span>
+          </div>
+          <h2 style="font-size:0.875rem;font-weight:600;margin-top:1.25rem">Trouvés <span class="mono" style="color:var(--cyan);font-size:0.75rem">9</span></h2>
+          <div class="chips">
+            <span class="chip chip-found">✓ Gestion de projet</span><span class="chip chip-found">✓ React</span><span class="chip chip-found">✓ Agile</span><span class="chip chip-found">✓ KPI</span><span class="chip chip-found">✓ Roadmap</span>
+          </div>
+        </div>
+
+        <div style="margin-top:2rem">
+          <button class="btn btn-primary" style="width:100%;justify-content:center" onclick="unlockAll(this)" data-testid="unlock-cta">🔒 Débloquer mon CV optimisé — 6,99 €</button>
+          <p class="mono" style="text-align:center;font-size:0.62rem;color:var(--mute);margin-top:0.75rem">Paiement unique · rapport valable 24 h</p>
+        </div>
+      </section>
+
+      <!-- PREVIEW STUDIO -->
+      <section class="tab-panel" id="panel-cv" data-testid="studio-preview">
+        <div class="card teaser" id="teaser" style="background:rgba(243,242,240,0.6);padding:1.5rem">
+          <div class="blurred" style="display:flex;justify-content:center">
+            <div class="a4 tpl-paris" style="max-width:460px;width:100%;box-shadow:var(--glow-strong)">
+              <div class="doc-header"><p class="doc-name">Camille Moreau</p><p class="doc-role">Product Ops Manager</p><span class="bar light" style="width:65%"></span></div>
+              <div class="pad">
+                <div><div class="doc-sec"><i></i><b>Profil</b></div><span class="bar"></span><span class="bar" style="width:92%"></span><span class="bar" style="width:66%"></span></div>
+                <div><div class="doc-sec"><i></i><b>Expérience</b></div><span class="bar" style="width:55%"></span><span class="bar" style="width:88%"></span><span class="bar" style="width:78%"></span><span class="bar" style="width:48%"></span><span class="bar" style="width:84%"></span><span class="bar" style="width:72%"></span></div>
+                <div><div class="doc-sec"><i></i><b>Compétences</b></div><span class="bar" style="width:80%"></span><span class="bar" style="width:60%"></span></div>
+                <div><div class="doc-sec"><i></i><b>Formation</b></div><span class="bar" style="width:58%"></span></div>
+              </div>
+            </div>
+          </div>
+          <div class="watermark"></div>
+          <div class="fade-bottom"></div>
+          <div class="teaser-cta">
+            <p style="font-size:0.875rem;font-weight:500;margin-bottom:0.75rem">Voici votre CV, réécrit et designé.</p>
+            <button class="btn btn-violet" onclick="unlockAll(this)" data-testid="unlock-cta-preview">🔒 Débloquer l'aperçu complet — 6,99 €</button>
+          </div>
+        </div>
+        <p class="mono" id="preview-caption" style="text-align:center;font-size:0.62rem;text-transform:uppercase;letter-spacing:0.2em;color:var(--mute);margin-top:0.75rem">Aperçu tronqué à 60 % — le vrai rendu après déblocage</p>
+
+        <!-- GALLERY ROW -->
+        <div style="margin-top:2.5rem;border-top:1px solid var(--border);padding-top:1.5rem" data-testid="template-row">
+          <div style="display:flex;justify-content:space-between;align-items:baseline">
+            <h2 style="font-size:0.875rem;font-weight:600">Choisissez votre design</h2>
+            <a href="cv.html" style="font-size:0.75rem;font-weight:500;color:var(--violet)" data-testid="open-full-gallery">Mode plein écran →</a>
+          </div>
+          <div class="gallery" style="margin-top:1.25rem">
+            <button class="tpl-card" aria-pressed="true" data-testid="gallery-template-paris"><div class="a4 tpl-paris"><div class="doc-header"><p class="doc-name">C. Moreau</p></div><div class="pad"><span class="bar"></span><span class="bar" style="width:80%"></span><span class="bar" style="width:88%"></span><span class="bar" style="width:60%"></span><span class="bar" style="width:75%"></span></div></div><div class="meta"><b>Paris</b><span class="check">✓</span></div></button>
+            <button class="tpl-card" aria-pressed="false" data-testid="gallery-template-london"><div class="a4 tpl-london"><div class="side"><div class="doc-header"><p class="doc-name">C. Moreau</p></div><span class="bar"></span><span class="bar" style="width:70%"></span></div><div class="main"><span class="bar"></span><span class="bar" style="width:85%"></span><span class="bar" style="width:65%"></span></div></div><div class="meta"><b>London</b><span class="check">✓</span></div></button>
+            <button class="tpl-card" aria-pressed="false" data-testid="gallery-template-tokyo"><div class="a4 tpl-tokyo"><div class="doc-header"><p class="doc-name">C. Moreau</p></div><div class="pad"><span class="bar"></span><span class="bar" style="width:75%"></span><span class="bar" style="width:88%"></span><span class="bar" style="width:55%"></span></div></div><div class="meta"><b>Tokyo</b><span class="check">✓</span></div></button>
+            <button class="tpl-card" aria-pressed="false" data-testid="gallery-template-stockholm"><div class="a4 tpl-stockholm"><div class="doc-header"><p class="doc-name">C. Moreau</p></div><div class="pad"><span class="bar"></span><span class="bar" style="width:82%"></span><span class="bar" style="width:68%"></span><span class="bar" style="width:90%"></span></div></div><div class="meta"><b>Stockholm</b><span class="check">✓</span></div></button>
+            <button class="tpl-card" aria-pressed="false" data-testid="gallery-template-berlin"><div class="a4 tpl-berlin"><div class="doc-header"><p class="doc-name">C. Moreau</p></div><div class="stripe"></div><div class="pad"><span class="bar"></span><span class="bar" style="width:78%"></span><span class="bar" style="width:86%"></span><span class="bar" style="width:62%"></span></div></div><div class="meta"><b>Berlin</b><span class="check">✓</span></div></button>
+            <button class="tpl-card" aria-pressed="false" data-testid="gallery-template-milan"><div class="a4 tpl-milan"><div class="doc-header"><p class="doc-name">C. Moreau</p></div><div class="pad"><span class="bar"></span><span class="bar" style="width:70%"></span><span class="bar" style="width:85%"></span><span class="bar" style="width:58%"></span><span class="bar" style="width:80%"></span></div></div><div class="meta"><b>Milan</b><span class="check">✓</span></div></button>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <a class="logo" href="ats.html">Profilo<span>.</span></a>
+      <p>Direction B « Studio progressif » · Données fictives</p>
+    </div>
+  </footer>
+
+  <script>
+    var tabDiag = document.getElementById('tab-diag');
+    var tabCv = document.getElementById('tab-cv');
+    var panelDiag = document.getElementById('panel-diag');
+    var panelCv = document.getElementById('panel-cv');
+    function selectTab(which) {
+      var d = which === 'diag';
+      tabDiag.setAttribute('aria-selected', d);
+      tabCv.setAttribute('aria-selected', !d);
+      panelDiag.classList.toggle('show', d);
+      panelCv.classList.toggle('show', !d);
+    }
+    tabDiag.addEventListener('click', function () { selectTab('diag'); });
+    tabCv.addEventListener('click', function () { selectTab('cv'); });
+
+    function unlockAll(btn) {
+      document.getElementById('teaser').classList.add('unlocked');
+      document.getElementById('preview-caption').textContent = 'Template paris · aperçu live';
+      if (btn && btn.getAttribute('data-testid') === 'unlock-cta') {
+        btn.textContent = '⤓ Télécharger le PDF (démo)';
+      }
+    }
+
+    document.querySelectorAll('.tpl-card').forEach(function (card) {
+      card.addEventListener('click', function () {
+        document.querySelectorAll('.tpl-card').forEach(function (c) { c.setAttribute('aria-pressed', 'false'); });
+        card.setAttribute('aria-pressed', 'true');
+      });
+    });
+  </script>
+  <button class="theme-toggle" id="theme-toggle" aria-label="Changer de thème" data-testid="theme-toggle">☾</button>
+  <script>
+    (function(){var b=document.getElementById('theme-toggle');function apply(t){document.documentElement.setAttribute('data-theme',t);localStorage.setItem('profilo-theme',t);b.textContent=t==='dark'?'☀':'☾';}apply(localStorage.getItem('profilo-theme')||'light');b.addEventListener('click',function(){apply(document.documentElement.getAttribute('data-theme')==='dark'?'light':'dark');});})();
+  </script>
+</body>
+</html>

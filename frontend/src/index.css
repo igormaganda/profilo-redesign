@@ -1,0 +1,315 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Work+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    :root {
+        --background: 60 11% 97%;
+        --foreground: 0 0% 10%;
+        --card: 0 0% 100%;
+        --card-foreground: 0 0% 10%;
+        --popover: 0 0% 100%;
+        --popover-foreground: 0 0% 10%;
+        --primary: 254 55% 56%;
+        --primary-foreground: 0 0% 100%;
+        --secondary: 40 8% 94%;
+        --secondary-foreground: 0 0% 10%;
+        --muted: 40 8% 94%;
+        --muted-foreground: 0 0% 37%;
+        --accent: 40 8% 94%;
+        --accent-foreground: 0 0% 10%;
+        --destructive: 0 84.2% 60.2%;
+        --destructive-foreground: 0 0% 98%;
+        --border: 40 8% 90%;
+        --input: 40 8% 88%;
+        --ring: 254 55% 56%;
+        --radius: 0.75rem;
+    }
+}
+
+@layer base {
+    * {
+        @apply border-border;
+    }
+    html {
+        scroll-behavior: smooth;
+    }
+    body {
+        @apply bg-brand-cream text-brand-ink font-body;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+    ::selection {
+        background: rgba(112, 83, 205, 0.18);
+    }
+}
+
+@layer base {
+    [data-debug-wrapper="true"] {
+        display: contents !important;
+    }
+}
+
+@layer components {
+    .card-glow {
+        box-shadow: 0 0 40px -10px rgba(112, 83, 205, 0.14), 0 1px 2px rgba(26, 26, 26, 0.04);
+    }
+    .card-glow-strong {
+        box-shadow: 0 24px 70px -24px rgba(112, 83, 205, 0.35), 0 2px 6px rgba(26, 26, 26, 0.05);
+    }
+    .eyebrow {
+        @apply font-mono text-xs uppercase tracking-[0.22em] text-brand-violet;
+    }
+}
+
+/* Editorial marquee */
+.marquee-track {
+    animation: marquee 48s linear infinite;
+}
+.marquee-track:hover {
+    animation-play-state: paused;
+}
+@keyframes marquee {
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+/* A4 zoom helpers (never transform: scale) */
+.cv-zoom-hero {
+    zoom: 0.5;
+}
+.cv-zoom-thumb {
+    zoom: 0.26;
+}
+.cv-zoom-preview {
+    zoom: 0.42;
+}
+@media (min-width: 768px) {
+    .cv-zoom-thumb {
+        zoom: 0.32;
+    }
+    .cv-zoom-preview {
+        zoom: 0.5;
+    }
+}
+@media (min-width: 1280px) {
+    .cv-zoom-preview {
+        zoom: 0.58;
+    }
+}
+@media (min-width: 1536px) {
+    .cv-zoom-preview {
+        zoom: 0.66;
+    }
+}
+
+/* Diagonal watermark for premium teaser */
+.watermark-band {
+    background-image: repeating-linear-gradient(
+        -45deg,
+        transparent 0px,
+        transparent 46px,
+        rgba(112, 83, 205, 0.05) 46px,
+        rgba(112, 83, 205, 0.05) 92px
+    );
+}
+
+/* Grain overlay */
+.grain::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.35;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.05'/%3E%3C/svg%3E");
+}
+
+/* ==========================================================================
+   Thème sombre (tokens oklch) — toute maquette existe en light + dark
+   ========================================================================== */
+.dark body,
+.dark .bg-brand-cream {
+    background-color: oklch(0.17 0.008 70);
+    color: oklch(0.95 0.01 90);
+}
+.dark .bg-brand-cream\/85,
+.dark .bg-brand-cream\/90 {
+    background-color: color-mix(in oklab, oklch(0.17 0.008 70) 86%, transparent);
+}
+.dark .bg-white {
+    background-color: oklch(0.225 0.01 70);
+}
+.dark .bg-white\/60,
+.dark .bg-white\/70 {
+    background-color: color-mix(in oklab, oklch(0.225 0.01 70) 70%, transparent);
+}
+.dark .bg-brand-sand,
+.dark .bg-brand-sand\/50,
+.dark .bg-brand-sand\/60 {
+    background-color: oklch(0.25 0.012 70);
+}
+.dark .bg-brand-cream\/50 {
+    background-color: rgb(255 255 255 / 0.04);
+}
+.dark .text-brand-ink {
+    color: oklch(0.95 0.01 90);
+}
+.dark .text-brand-mute {
+    color: oklch(0.74 0.015 80);
+}
+.dark .text-brand-mute\/50,
+.dark .text-brand-mute\/40 {
+    color: color-mix(in oklab, oklch(0.74 0.015 80) 55%, transparent);
+}
+.dark .border-black\/5,
+.dark .border-black\/8,
+.dark .border-black\/10 {
+    border-color: rgb(255 255 255 / 0.09);
+}
+.dark .border-black\/15,
+.dark .border-black\/20 {
+    border-color: rgb(255 255 255 / 0.16);
+}
+.dark .bg-black\/5,
+.dark .bg-black\/8 {
+    background-color: rgb(255 255 255 / 0.07);
+}
+.dark .bg-black\/10,
+.dark .bg-black\/15 {
+    background-color: rgb(255 255 255 / 0.12);
+}
+.dark .bg-brand-ink\/80 {
+    background-color: rgb(242 241 237 / 0.85);
+    color: oklch(0.17 0.008 70);
+}
+.dark .bg-brand-violet\/10,
+.dark .bg-brand-violet\/\[0\.03\],
+.dark .bg-brand-violet\/\[0\.06\] {
+    background-color: rgb(112 83 205 / 0.16);
+}
+.dark .bg-brand-cyan\/10 {
+    background-color: rgb(6 182 212 / 0.16);
+}
+.dark .bg-brand-amber\/10,
+.dark .bg-brand-amber\/\[0\.07\] {
+    background-color: rgb(202 138 4 / 0.14);
+}
+.dark .card-glow {
+    box-shadow: 0 0 40px -10px rgb(112 83 205 / 0.28), 0 1px 2px rgb(0 0 0 / 0.4);
+}
+.dark .card-glow-strong {
+    box-shadow: 0 24px 70px -24px rgb(112 83 205 / 0.45), 0 2px 6px rgb(0 0 0 / 0.5);
+}
+.dark .grain::after {
+    opacity: 0.5;
+}
+.dark ::selection {
+    background: rgb(112 83 205 / 0.4);
+}
+
+/* Le document A4 reste du papier blanc, même en thème sombre */
+.dark .cv-sheet {
+    background-color: #fff !important;
+}
+.dark .cv-sheet .text-brand-ink {
+    color: #1a1a1a;
+}
+.dark .cv-sheet .text-brand-mute {
+    color: #5e5e5e;
+}
+.dark .cv-sheet .bg-black\/10,
+.dark .cv-sheet .bg-black\/8 {
+    background-color: rgb(0 0 0 / 0.09);
+}
+.dark .cv-sheet .bg-brand-sand {
+    background-color: #f3f2f0;
+}
+
+/* Bannière cookies — ne chevauche jamais les CTA bas de page */
+.cookie-banner {
+    position: fixed;
+    right: 1rem;
+    bottom: 1rem;
+    z-index: 60;
+    max-width: 22rem;
+}
+@media (max-width: 640px) {
+    .cookie-banner {
+        left: 1rem;
+        max-width: none;
+    }
+}
+
+/* Page légale */
+.legal h2 {
+    font-family: Poppins, sans-serif;
+    font-weight: 600;
+    font-size: 1.15rem;
+    margin-top: 2.5rem;
+    letter-spacing: -0.01em;
+}
+.legal p,
+.legal ul {
+    margin-top: 0.75rem;
+    font-size: 0.925rem;
+    line-height: 1.75;
+}
+.legal ul {
+    list-style: none;
+    display: grid;
+    gap: 0.5rem;
+}
+.legal li {
+    padding-left: 1.25rem;
+    position: relative;
+}
+.legal li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.65em;
+    width: 6px;
+    height: 6px;
+    border-radius: 999px;
+    background: #7053cd;
+}
+
+/* ==========================================================================
+   Ajustements design : paddings plafonnés à 50px + lisibilité typographique
+   ========================================================================== */
+body {
+    text-rendering: optimizeLegibility;
+    font-feature-settings: "kern" 1;
+    -webkit-font-feature-settings: "kern" 1;
+}
+
+.py-14,
+.py-16,
+.py-20,
+.py-24 {
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+.pt-20 {
+    padding-top: 50px;
+}
+.pb-24,
+.pb-28 {
+    padding-bottom: 50px;
+}
+@media (min-width: 768px) {
+    .md\:py-20,
+    .md\:py-24,
+    .md\:py-32 {
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+}
+@media (min-width: 1024px) {
+    .lg\:pt-28 {
+        padding-top: 50px;
+    }
+}

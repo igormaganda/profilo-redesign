@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Profilo — Analysez votre CV face à une offre d'emploi</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Work+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="wrap">
+      <a class="logo" href="ats.html">Profilo<span>.</span></a>
+      <div class="header-actions">
+        <a class="btn btn-primary btn-sm" href="#audit" data-testid="header-cta">Analyser mon CV</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="wrap">
+        <p class="eyebrow">Gratuit · Résultat en 30 s · Sans inscription</p>
+        <h1>
+          <span class="mask"><span>Votre CV mérite</span></span>
+          <span class="mask"><span>d'être lu avant</span></span>
+          <span class="mask"><span>d'être <span class="v">filtré.</span></span></span>
+        </h1>
+        <p class="lead">Comparez votre CV à une offre d'emploi, repérez les mots-clés et compétences manquants, puis obtenez des recommandations concrètes pour renforcer votre candidature.</p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="#audit" data-testid="hero-cta-analyze">Analyser mon CV gratuitement →</a>
+          <a class="btn btn-ghost" href="audit-b.html" data-testid="hero-cta-sample">Voir un exemple de rapport</a>
+        </div>
+        <div class="trust">
+          <span>◈ CV anonymisé avant analyse</span>
+          <span>◈ Score instantané</span>
+          <span>◈ PDF &amp; DOCX</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- MARQUEE -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track">
+        <span>12 847+ profils audités</span><span>Score moyen : 51 / 100</span><span>« Profilo m'a décroché 3 entretiens » — Karim B.</span><span>Analyse en 30 secondes</span><span>Propulsé par l'IA</span><span>8 critères évalués</span><span>Rapport expert : 6,99 € — offre de lancement</span><span>« Immédiatement actionnable » — Léa M.</span>
+        <span>12 847+ profils audités</span><span>Score moyen : 51 / 100</span><span>« Profilo m'a décroché 3 entretiens » — Karim B.</span><span>Analyse en 30 secondes</span><span>Propulsé par l'IA</span><span>8 critères évalués</span><span>Rapport expert : 6,99 € — offre de lancement</span><span>« Immédiatement actionnable » — Léa M.</span>
+      </div>
+    </div>
+
+    <!-- FORM -->
+    <section class="section" id="audit">
+      <div class="wrap">
+        <p class="eyebrow reveal">Étape 01 — Déposer</p>
+        <h2 class="reveal d1">Analysez votre CV gratuitement</h2>
+        <p class="sub reveal d2">Importez votre CV, collez l'offre, recevez votre rapport en 30 secondes. Sans inscription, sans carte bancaire.</p>
+        <form class="card form-grid reveal d2" action="audit-b.html" data-testid="ats-form">
+          <div class="field">
+            <label>Votre CV <span class="mono" style="float:right;font-size:0.65rem;color:var(--cyan);text-transform:uppercase">Gratuit · Sans inscription</span></label>
+            <div class="upload-zone" data-testid="cv-upload-zone">
+              <div style="width:48px;height:48px;border-radius:999px;background:rgba(112,83,205,0.1);display:flex;align-items:center;justify-content:center;color:var(--violet);font-size:1.25rem">↑</div>
+              <p style="font-size:0.875rem;font-weight:500">Glissez votre CV ici (PDF ou DOCX)</p>
+              <p class="hint">5 Mo max · ou cliquez pour parcourir</p>
+            </div>
+            <p style="margin-top:1rem;font-size:0.75rem;color:var(--mute)">🔒 Nous ne demandons jamais vos identifiants. Votre CV est anonymisé (e-mails, téléphones supprimés) avant l'analyse IA.</p>
+          </div>
+          <div class="field">
+            <label for="offer">Offre d'emploi ciblée</label>
+            <textarea id="offer" rows="6" placeholder="Collez ici l'annonce complète : missions, compétences requises, stack…" data-testid="job-offer-input"></textarea>
+            <label for="role" style="margin-top:1.25rem">Rôle visé <span style="font-weight:400;color:var(--mute)">(optionnel)</span></label>
+            <input id="role" type="text" placeholder="Ex. Product Ops Manager" data-testid="role-input" />
+            <label class="consent">
+              <input type="checkbox" required data-testid="consent-checkbox" />
+              <span>J'accepte que mon CV soit analysé par notre IA. Mes données sont anonymisées avant traitement.</span>
+            </label>
+            <button class="btn btn-primary" type="submit" style="width:100%;margin-top:1.5rem;justify-content:center" data-testid="analyze-submit-button">Analyser mon CV gratuitement →</button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- STEPS -->
+    <section class="section band">
+      <div class="wrap">
+        <p class="eyebrow">Comment ça marche</p>
+        <h2>Trois étapes, trente secondes.</h2>
+        <div class="steps">
+          <div class="step"><span class="num">01</span><h3>Importez votre CV</h3><p>PDF ou DOCX, ou collez le texte directement.</p></div>
+          <div class="step"><span class="num">02</span><h3>Collez l'offre</h3><p>Le poste que vous visez, avec missions et compétences.</p></div>
+          <div class="step"><span class="num">03</span><h3>Obtenez l'analyse</h3><p>Score d'alignement, mots-clés manquants, CV optimisé.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURES -->
+    <section class="section">
+      <div class="wrap">
+        <p class="eyebrow">Ce que vous obtenez</p>
+        <h2>Un rapport complet, actionnable.</h2>
+        <div class="features">
+          <div class="card feature"><div class="icon">◎</div><h3>Score d'alignement CV / offre</h3><p>Un chiffre clair pour savoir où vous vous situez.</p></div>
+          <div class="card feature"><div class="icon">#</div><h3>Mots-clés trouvés et manquants</h3><p>Les termes que les ATS et les recruteurs recherchent.</p></div>
+          <div class="card feature"><div class="icon">☰</div><h3>Analyse section par section</h3><p>Titre, résumé, expérience, compétences, formation.</p></div>
+          <div class="card feature"><div class="icon">⤓</div><h3>CV optimisé exportable</h3><p>Une version réécrite, alignée avec l'offre, en PDF designé.</p></div>
+          <div class="card feature"><div class="icon">✓</div><h3>Checklist avant envoi</h3><p>Ce qu'il faut vérifier avant de postuler.</p></div>
+          <div class="card feature"><div class="icon">in</div><h3>Recommandation LinkedIn</h3><p>Pour rester cohérent entre votre CV et votre profil.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DIRECTIONS -->
+    <section class="section band">
+      <div class="wrap">
+        <p class="eyebrow">Redesign — deux directions</p>
+        <h2>Comparez les deux maquettes du rapport.</h2>
+        <div class="features" style="grid-template-columns:1fr" >
+          <div class="card feature">
+            <p class="eyebrow">Direction A</p>
+            <h3 style="margin-top:0.5rem">« Diagnostic clinique »</h3>
+            <p>Le rapport se lit comme un bilan de santé : verdict synthétique, preuves en jauges, ordonnance de 3 actions, avant/après du CV.</p>
+            <a class="btn btn-ghost btn-sm" href="audit-a.html" style="margin-top:1.25rem" data-testid="direction-a-card">Voir la maquette →</a>
+          </div>
+          <div class="card feature">
+            <p class="eyebrow" style="color:var(--cyan)">Direction B</p>
+            <h3 style="margin-top:0.5rem">« Studio progressif »</h3>
+            <p>Le rapport EST déjà le studio : diagnostic compact à droite, aperçu live du CV designé à gauche. Le déblocage se fait en place.</p>
+            <a class="btn btn-ghost btn-sm" href="audit-b.html" style="margin-top:1.25rem" data-testid="direction-b-card">Voir la maquette →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section" id="faq">
+      <div class="wrap" style="max-width:48rem">
+        <p class="eyebrow">FAQ</p>
+        <h2>Questions fréquentes</h2>
+        <div style="margin-top:2.5rem">
+          <details style="border-bottom:1px solid var(--border);padding:1.25rem 0"><summary style="font-family:var(--font-heading);font-weight:500;cursor:pointer">Qu'est-ce qu'un ATS ?</summary><p style="margin-top:0.75rem;font-size:0.875rem;color:var(--mute)">Un ATS (Applicant Tracking System) est un logiciel utilisé par la plupart des grandes entreprises pour filtrer automatiquement les CV. Si le vôtre ne contient pas les bons mots-clés, il peut être rejeté avant même qu'un humain ne le lise.</p></details>
+          <details style="border-bottom:1px solid var(--border);padding:1.25rem 0"><summary style="font-family:var(--font-heading);font-weight:500;cursor:pointer">Le service est-il vraiment gratuit ?</summary><p style="margin-top:0.75rem;font-size:0.875rem;color:var(--mute)">Oui. L'analyse est gratuite et sans inscription. Aucune carte bancaire n'est demandée.</p></details>
+          <details style="border-bottom:1px solid var(--border);padding:1.25rem 0"><summary style="font-family:var(--font-heading);font-weight:500;cursor:pointer">Mes données sont-elles protégées ?</summary><p style="margin-top:0.75rem;font-size:0.875rem;color:var(--mute)">Votre CV est anonymisé avant d'être envoyé à l'IA. Vos résultats sont supprimés après 24 h.</p></details>
+          <details style="border-bottom:1px solid var(--border);padding:1.25rem 0"><summary style="font-family:var(--font-heading);font-weight:500;cursor:pointer">Quels formats sont acceptés ?</summary><p style="margin-top:0.75rem;font-size:0.875rem;color:var(--mute)">PDF et DOCX. Vous pouvez aussi coller le texte directement.</p></details>
+          <details style="border-bottom:1px solid var(--border);padding:1.25rem 0"><summary style="font-family:var(--font-heading);font-weight:500;cursor:pointer">Combien de temps prend l'analyse ?</summary><p style="margin-top:0.75rem;font-size:0.875rem;color:var(--mute)">Environ 30 secondes : score, mots-clés manquants, analyse par section et version optimisée.</p></details>
+        </div>
+      </div>
+    </section>
+
+    <!-- FINAL CTA -->
+    <section style="background:var(--violet);padding:5rem 0">
+      <div class="wrap">
+        <h2 style="color:#fff;max-width:42rem">Votre prochain entretien commence par un CV qui passe le filtre.</h2>
+        <a class="btn" href="#audit" style="background:#fff;color:var(--violet);margin-top:2rem" data-testid="final-cta">Analyser mon CV maintenant →</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <a class="logo" href="ats.html">Profilo<span>.</span></a>
+      <p>Maquette HTML/CSS — parcours ATS redesigné · Données fictives</p>
+    </div>
+  </footer>
+
+  <button class="theme-toggle" id="theme-toggle" aria-label="Changer de thème" data-testid="theme-toggle">☾</button>
+  <script>
+    (function(){var b=document.getElementById('theme-toggle');function apply(t){document.documentElement.setAttribute('data-theme',t);localStorage.setItem('profilo-theme',t);b.textContent=t==='dark'?'☀':'☾';}apply(localStorage.getItem('profilo-theme')||'light');b.addEventListener('click',function(){apply(document.documentElement.getAttribute('data-theme')==='dark'?'light':'dark');});})();
+  </script>
+</body>
+</html>

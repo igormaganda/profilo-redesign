@@ -1,0 +1,112 @@
+{
+  "theme_and_tone": {
+    "vibe": "Premium, authoritative yet supportive, clinical diagnosis meets modern design studio.",
+    "target_audience": "Stressed French-speaking job candidate, 50% mobile (must work flawlessly at 375px).",
+    "design_archetype": "Organic & Earthy blended with Swiss & High-Contrast (for metrics). Focus on building trust and triggering a 'wow' moment upon payment.",
+    "theme": "Light theme only (cream/light beige backgrounds)."
+  },
+  "typography": {
+    "headings": {
+      "family": "Poppins",
+      "import_url": "https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap",
+      "rules": "Used for all headings. H1 must not exceed text-5xl on mobile, text-6xl on desktop. Tight tracking (`tracking-tight`)."
+    },
+    "body": {
+      "family": "Work Sans",
+      "import_url": "https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600&display=swap",
+      "rules": "Used for all body text, paragraphs, labels, and form inputs. Left-aligned for readability."
+    },
+    "data": {
+      "family": "JetBrains Mono",
+      "import_url": "https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap",
+      "rules": "Used EXCLUSIVELY for data, numbers, scores, and tabular-nums. Gives a clinical, precise feel."
+    }
+  },
+  "colors": {
+    "background": {
+      "primary": "#FAFAF8",
+      "secondary": "#F3F2F0"
+    },
+    "accent": {
+      "violet": "#7053cd",
+      "cyan": "#06b6d4",
+      "dark_amber": "#a16207"
+    },
+    "text": {
+      "primary": "#1A1A1A",
+      "secondary": "#5E5E5E",
+      "inverse": "#FFFFFF"
+    },
+    "rules": "Use the light beige/cream for main backgrounds. Use soft glow halos for cards (`shadow-[0_0_40px_-10px_rgba(112,83,205,0.1)]`). Primary actions MUST be cyan. Accent texts on light backgrounds MUST be dark amber. Score rings and brand elements use the violet."
+  },
+  "layouts": {
+    "global": {
+      "spacing": "Generous spacing. Use `py-20` to `py-32` for sections. Mobile-first padding.",
+      "breadcrumb": "Thin progress bar indicating steps: 1 Analyser → 2 Comprendre → 3 Choisir → 4 Télécharger."
+    },
+    "direction_a": {
+      "name": "Diagnostic clinique",
+      "description": "Report reads like a health checkup.",
+      "structure": "Verdict band with XL score ring + diagnostic sentence. 'Preuves' section: 2x2 grid of compact gauge cards. 'Ordonnance' section: 3 numbered priority actions. Avant/Après CV card with blurred teaser for free users."
+    },
+    "direction_b": {
+      "name": "Studio progressif",
+      "description": "Split-view 40/60 layout.",
+      "structure": "Desktop: Left (60%) is live A4 preview of optimized CV teaser cropped at 60% with discreet diagonal watermark. Right (40%) is compact diagnostic with score + top 3 gaps + missing keyword chips. Mobile: Becomes tabs 'Diagnostic | Mon CV'. Payment unlocks in place with 600ms unblur transition."
+    },
+    "cv_gallery": {
+      "structure": "6-column grid (on large screens, fewer on mobile). Cards contain A4 ratio thumbnails using CSS zoom (no `transform: scale`). 6 templates named: paris, london, tokyo, stockholm, berlin, milan. Round checkmarks for selection. Sticky header with ONE primary CTA ('Télécharger le PDF')."
+    }
+  },
+  "components": {
+    "ScoreRing": "Circular SVG progress indicator using violet and gray, with JetBrains Mono number in the center.",
+    "KeywordChip": "Pill-shaped tag (`rounded-full px-3 py-1`), using dark amber for missing keywords or cyan for matched.",
+    "Cards": "Soft glow halo. White background (`bg-white`), `rounded-2xl`, subtle border `border-black/5`, and the specific violet shadow.",
+    "A4Preview": "A CSS-based A4 container with ratio 210/297. For thumbnails, use `zoom` property, NOT scale, to maintain text legibility logic. The free version must use skeleton bars (no real text) and a watermark overlay.",
+    "PremiumTeaser": "Content obscured by `blur-md`. Has an unlock overlay with a CTA. On unlock, animate `backdrop-filter` from blur to none over 600ms.",
+    "Forms": "Use customized Shadcn UI elements for drag-drop PDF/DOCX or text paste, job offer field, target role, and consent checkbox.",
+    "Marquee": "Slow editorial marquee for social proof. Use `react-fast-marquee` or Framer Motion."
+  },
+  "motion": {
+    "hero": "Line-by-line reveal using Framer Motion (`staggerChildren`). Subtle parallax on scroll.",
+    "premium_unlock": "600ms unblur transition. A 'wow' moment.",
+    "scroll": "Staggered scroll reveals for 'how it works' and features."
+  },
+  "media": {
+    "image_urls": [
+      {
+        "url": "https://images.unsplash.com/photo-1689857659236-157790e6d4c2?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1OTN8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjBwb3J0cmFpdCUyMHN0cmVzc2VkJTIwd29ya2luZyUyMGxhcHRvcHxlbnwwfHx8fDE3ODgyODI2MTR8MA&ixlib=rb-4.1.0&q=85",
+        "category": "hero_background_or_testimonial",
+        "description": "Stressed professional working on laptop, useful for hero or problem statement section."
+      },
+      {
+        "url": "https://images.unsplash.com/photo-1698047681465-a75bcf38379e?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1OTN8MHwxfHNlYXJjaHwzfHxwcm9mZXNzaW9uYWwlMjBwb3J0cmFpdCUyMHN0cmVzc2VkJTIwd29ya2luZyUyMGxhcHRvcHxlbnwwfHx8fDE3ODgyODI2MTR8MA&ixlib=rb-4.1.0&q=85",
+        "category": "testimonial",
+        "description": "Woman stressed at laptop."
+      }
+    ]
+  },
+  "instructions_to_main_agent": [
+    "1. Setup standard React/FastAPI workspace structure, install `framer-motion`, `lucide-react`, and configure Tailwind config with brand colors and fonts.",
+    "2. Implement a global sticky header (nav) and a thin progress bar component (Breadcrumb: Analyser -> Comprendre -> Choisir -> Télécharger).",
+    "3. Build the `/ats` Landing Page: Hero with line-by-line text reveal, drag-drop form (mocked), job offer field, consent, social proof marquee, 'how it works', and FAQ.",
+    "4. Build `/audit-a` (Direction A): Clinical diagnostic view. Verdict band, 2x2 compact gauge cards, 3 numbered actions, avant/après blurred CV card.",
+    "5. Build `/audit-b` (Direction B): Split-view 40/60 layout. Left side A4 preview (cropped at 60% with diagonal watermark). Right side compact diagnostic + keyword chips. Implement mobile tabs.",
+    "6. Build `/cv` Gallery Page: 6 templates (CSS-styled A4 mockups using the names: paris, london, tokyo, stockholm, berlin, milan). Thumbnails use CSS zoom. Sticky CTA to download.",
+    "7. Ensure the 600ms unblur 'wow' moment is implemented as a toggleable state for demonstration (Free vs Premium states).",
+    "8. Add `data-testid` to all interactive elements.",
+    "9. Provide toggle links/buttons between Direction A and Direction B in the UI for easy comparison."
+  ],
+  "UNIVERSAL_GUIDELINES_FOR_MAIN_AGENT": [
+    "You tend to converge toward generic outputs. Make creative, distinctive frontends that surprise and delight.",
+    "Do not use dark colors as gradients.",
+    "Create depth through layered design elements with z-index hierarchy and the specified violet soft glow.",
+    "You MUST NOT apply universal transition (`transition: all`). Add transitions for specific properties.",
+    "You MUST NOT center align the app container. No `.App { text-align: center; }`.",
+    "Use modern pill-shaped or sharp buttons with hover animations.",
+    "NEVER use emoji characters for icons. Use `lucide-react`.",
+    "Add micro-animations (hover states, stagger effects).",
+    "Use 2-3x more spacing than feels comfortable.",
+    "NEVER use placeholder text for images. Use the provided image_urls or CSS patterns."
+  ]
+}

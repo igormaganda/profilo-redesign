@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Audit LinkedIn — Votre profil vous coûte-t-il des opportunités ? · Profilo</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Work+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="wrap">
+      <a class="logo" href="index.html">Profilo<span>.</span></a>
+      <div class="header-actions">
+        <nav class="direction-toggle">
+          <a href="index.html">Accueil</a>
+          <a href="linkedin.html" class="on">LinkedIn</a>
+          <a href="ats.html">CV ATS</a>
+          <a href="bundle.html">Promotion</a>
+        </nav>
+        <a class="btn btn-primary btn-sm" href="#audit" data-testid="header-cta">Auditer mon profil</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="wrap">
+        <p class="eyebrow">Gratuit · Sans inscription</p>
+        <h1>
+          <span class="mask"><span>Votre profil LinkedIn</span></span>
+          <span class="mask"><span>vous coûte des</span></span>
+          <span class="mask"><span><span class="v">opportunités.</span></span></span>
+        </h1>
+        <p class="lead">Collez l'URL de votre profil LinkedIn. Audit IA complet en 30 secondes : score sur 8 critères, diagnostic et plan d'action.</p>
+        <div class="trust">
+          <span>◈ Aucun identifiant requis</span>
+          <span>◈ 8 critères analysés</span>
+          <span>◈ Sans carte bancaire</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="audit" style="padding-top:3rem">
+      <div class="wrap" style="max-width:42rem">
+        <form class="card" style="padding:2rem" action="audit-linkedin.html" data-testid="linkedin-form">
+          <label style="font-size:0.875rem;font-weight:500" for="li-url">L'URL de votre profil LinkedIn <span class="mono" style="float:right;font-size:0.65rem;color:var(--cyan);text-transform:uppercase">Gratuit</span></label>
+          <div class="field" style="margin-top:0.75rem">
+            <input id="li-url" type="url" placeholder="https://www.linkedin.com/in/votre-profil" data-testid="linkedin-url-input" />
+          </div>
+          <label class="consent">
+            <input type="checkbox" required data-testid="linkedin-consent-checkbox" />
+            <span>J'accepte que mon profil soit analysé par notre IA. Mes données ne sont jamais partagées et je peux les supprimer à tout moment.</span>
+          </label>
+          <button class="btn btn-primary" type="submit" style="width:100%;justify-content:center;margin-top:1.25rem" data-testid="linkedin-submit-button">Auditer mon profil gratuitement →</button>
+          <p class="mono" style="text-align:center;font-size:0.65rem;color:var(--mute);margin-top:0.75rem">Gratuit · Résultat en 30 s · Sans inscription</p>
+        </form>
+      </div>
+    </section>
+
+    <section class="section band">
+      <div class="wrap">
+        <p class="eyebrow">Simple et rapide</p>
+        <h2>Comment ça marche</h2>
+        <div class="steps">
+          <div class="step"><span class="num">01</span><h3>Collez votre profil <span class="mono" style="font-size:0.7rem;color:var(--cyan)">Gratuit</span></h3><p>Copiez votre URL LinkedIn ou le texte visible de votre profil.</p></div>
+          <div class="step"><span class="num">02</span><h3>Recevez votre audit <span class="mono" style="font-size:0.7rem;color:var(--cyan)">30 sec</span></h3><p>Notre IA analyse 8 critères : score, diagnostic et actions concrètes.</p></div>
+          <div class="step"><span class="num">03</span><h3>Débloquez l'expert <span class="mono" style="font-size:0.7rem;color:var(--cyan)">6,99 €</span></h3><p>Textes réécrits prêts à copier-coller et verdict recruteur.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <p class="eyebrow">Comparer les offres</p>
+        <h2>Gratuit vs rapport expert.</h2>
+        <div class="features" style="grid-template-columns:1fr">
+          <div class="card feature">
+            <h3 style="margin-top:0">Audit gratuit</h3>
+            <p class="mono" style="font-size:1.5rem;font-weight:700;color:var(--ink);margin-top:0.5rem">0 € <span style="font-size:0.75rem;color:var(--mute)">/ audit</span></p>
+            <p>Score global /100 · 8 sous-scores · Diagnostic 3 phrases · 6 actions concrètes.</p>
+            <a class="btn btn-ghost btn-sm" href="#audit" style="margin-top:1rem" data-testid="pricing-free-cta">Essayer gratuitement</a>
+          </div>
+          <div class="card feature" style="border:2px solid var(--violet)">
+            <h3 style="margin-top:0">Rapport expert <span class="mono" style="font-size:0.6rem;color:var(--violet);text-transform:uppercase">Offre de lancement</span></h3>
+            <p class="mono" style="font-size:1.5rem;font-weight:700;color:var(--ink);margin-top:0.5rem">6,99 € <span style="font-size:0.75rem;color:var(--mute)">/ rapport</span> <s style="font-size:0.8rem;color:var(--mute)">12,99 €</s></p>
+            <p>Tout le gratuit + 3 headlines réécrites, À propos réécrite, 2 expériences reformulées, verdict recruteur, valeur de marché.</p>
+            <a class="btn btn-primary btn-sm" href="#audit" style="margin-top:1rem" data-testid="pricing-expert-cta">Lancer l'audit</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section band">
+      <div class="wrap">
+        <p class="eyebrow">Analyse complète</p>
+        <h2>8 critères passés au crible.</h2>
+        <div class="features">
+          <div class="card feature" style="padding:1.25rem"><h3 style="margin:0;font-size:0.9rem">Headline</h3><p style="font-size:0.8rem">Votre titre est-il optimisé pour les recherches ?</p></div>
+          <div class="card feature" style="padding:1.25rem"><h3 style="margin:0;font-size:0.9rem">Section À propos</h3><p style="font-size:0.8rem">Votre pitch donne-t-il envie de vous contacter ?</p></div>
+          <div class="card feature" style="padding:1.25rem"><h3 style="margin:0;font-size:0.9rem">Expérience</h3><p style="font-size:0.8rem">Vos résultats sont-ils chiffrés ?</p></div>
+          <div class="card feature" style="padding:1.25rem"><h3 style="margin:0;font-size:0.9rem">Compétences</h3><p style="font-size:0.8rem">Vos compétences clés sont-elles visibles ?</p></div>
+          <div class="card feature" style="padding:1.25rem"><h3 style="margin:0;font-size:0.9rem">Réseau</h3><p style="font-size:0.8rem">Votre activité reflète-t-elle votre expertise ?</p></div>
+          <div class="card feature" style="padding:1.25rem"><h3 style="margin:0;font-size:0.9rem">Cohérence</h3><p style="font-size:0.8rem">Votre profil raconte-t-il une histoire crédible ?</p></div>
+          <div class="card feature" style="padding:1.25rem"><h3 style="margin:0;font-size:0.9rem">Photo de profil</h3><p style="font-size:0.8rem">Inspire-t-elle confiance ?</p></div>
+          <div class="card feature" style="padding:1.25rem"><h3 style="margin:0;font-size:0.9rem">Recommandations</h3><p style="font-size:0.8rem">Renforcent-elles votre crédibilité ?</p></div>
+        </div>
+        <p class="mono" style="margin-top:1.5rem;font-size:0.7rem;color:var(--mute)">Chaque critère noté sur 20 · Score global sur 100</p>
+      </div>
+    </section>
+
+    <section style="background:var(--violet);padding:5rem 0">
+      <div class="wrap">
+        <h2 style="color:#fff;max-width:42rem">Prêt à transformer votre profil LinkedIn ?</h2>
+        <a class="btn" href="#audit" style="background:#fff;color:var(--violet);margin-top:2rem" data-testid="linkedin-final-cta">Auditer mon profil →</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <a class="logo" href="index.html">Profilo<span>.</span></a>
+      <p><a href="politique-confidentialite.html" style="color:var(--mute)">Politique de confidentialité</a> · Maquette HTML/CSS · Données fictives</p>
+    </div>
+  </footer>
+
+  <button class="theme-toggle" id="theme-toggle" aria-label="Changer de thème" data-testid="theme-toggle">☾</button>
+  <script>
+    (function(){var b=document.getElementById('theme-toggle');function apply(t){document.documentElement.setAttribute('data-theme',t);localStorage.setItem('profilo-theme',t);b.textContent=t==='dark'?'☀':'☾';}apply(localStorage.getItem('profilo-theme')||'light');b.addEventListener('click',function(){apply(document.documentElement.getAttribute('data-theme')==='dark'?'light':'dark');});})();
+  </script>
+</body>
+</html>

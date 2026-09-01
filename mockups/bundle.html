@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Le Bundle LinkedIn + CV à 10,99 € · Profilo</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Work+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .plans { display: grid; gap: 1.25rem; margin-top: 3.5rem; }
+    @media (min-width: 768px) { .plans { grid-template-columns: repeat(2, 1fr); } }
+    @media (min-width: 1280px) { .plans { grid-template-columns: repeat(4, 1fr); } }
+    .plan { display: flex; flex-direction: column; padding: 1.75rem; position: relative; }
+    .plan.hot { border: 2px solid var(--violet); box-shadow: var(--glow-strong); }
+    .plan .price { font-family: var(--font-mono); font-size: 1.75rem; font-weight: 700; margin-top: 0.75rem; }
+    .plan .price small { font-size: 0.7rem; font-weight: 400; color: var(--mute); }
+    .plan .old { font-family: var(--font-mono); font-size: 0.75rem; color: var(--mute); text-decoration: line-through; }
+    .plan ul { list-style: none; margin-top: 1.5rem; display: grid; gap: 0.6rem; flex: 1; }
+    .plan li { font-size: 0.8rem; display: flex; gap: 0.5rem; align-items: flex-start; }
+    .plan li::before { content: "✓"; color: var(--cyan); font-weight: 700; }
+    .plan.hot li::before { color: var(--violet); }
+    .plan .badge { position: absolute; top: -12px; left: 1.75rem; background: var(--violet); color: #fff; border-radius: 999px; padding: 0.25rem 0.8rem; font-family: var(--font-mono); font-size: 0.6rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; }
+    .stats { display: grid; gap: 1.25rem; margin-top: 2.5rem; }
+    @media (min-width: 640px) { .stats { grid-template-columns: repeat(3, 1fr); } }
+    .stat { border: 1px solid var(--border); border-radius: 1rem; background: var(--cream); padding: 1.75rem; }
+    .stat b { font-family: var(--font-mono); font-size: 1.75rem; color: var(--violet); }
+    .stat p { font-size: 0.875rem; color: var(--mute); margin-top: 0.5rem; }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="wrap">
+      <a class="logo" href="index.html">Profilo<span>.</span></a>
+      <div class="header-actions">
+        <nav class="direction-toggle">
+          <a href="index.html">Accueil</a>
+          <a href="linkedin.html">LinkedIn</a>
+          <a href="ats.html">CV ATS</a>
+          <a href="bundle.html" class="on">Promotion</a>
+        </nav>
+        <a class="btn btn-primary btn-sm" href="#plans" data-testid="header-cta">Voir les offres</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" style="padding-bottom:3rem">
+      <div class="wrap">
+        <p class="eyebrow">Offre de lancement</p>
+        <h1>
+          <span class="mask"><span>LinkedIn + CV :</span></span>
+          <span class="mask"><span>le duo à <span class="v">10,99 €</span></span></span>
+          <span class="mask"><span>au lieu de 13,98 €.</span></span>
+        </h1>
+        <p class="lead">Audit LinkedIn Premium + Analyse ATS Premium + 3 analyses ATS supplémentaires. Une candidature cohérente de bout en bout — et 21 % d'économie.</p>
+        <div class="trust">
+          <span>◈ Accès immédiat</span>
+          <span>◈ Paiement sécurisé</span>
+          <span>◈ -21 % vs achat séparé</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="plans" style="padding-top:3rem">
+      <div class="wrap">
+        <p class="eyebrow">Toutes les offres</p>
+        <h2>Choisissez votre formule.</h2>
+        <div class="plans">
+          <div class="card plan" data-testid="plan-free">
+            <h3>Découverte</h3>
+            <p class="price">0 € <small>/ audit</small></p>
+            <ul><li>Score LinkedIn /100 ou alignement CV</li><li>Sous-scores détaillés</li><li>Diagnostic synthétique</li><li>6 actions concrètes</li></ul>
+            <a class="btn btn-ghost" href="linkedin.html" style="justify-content:center;margin-top:1.5rem" data-testid="plan-cta-free">Commencer gratuitement</a>
+          </div>
+          <div class="card plan" data-testid="plan-linkedin">
+            <h3>Audit LinkedIn Expert</h3>
+            <p class="price">6,99 € <small>/ rapport</small></p>
+            <p class="old">12,99 €</p>
+            <ul><li>Tout l'audit gratuit</li><li>3 headlines réécrites</li><li>Section À propos réécrite</li><li>Verdict recruteur</li><li>Valeur de marché estimée</li></ul>
+            <button class="btn btn-primary" style="justify-content:center;margin-top:1.5rem" data-testid="plan-cta-linkedin">Choisir LinkedIn Expert</button>
+          </div>
+          <div class="card plan" data-testid="plan-ats">
+            <h3>Analyse ATS Premium</h3>
+            <p class="price">6,99 € <small>/ analyse</small></p>
+            <ul><li>Toute l'analyse gratuite</li><li>CV optimisé complet</li><li>6 designs PDF vectoriels</li><li>Export illimité pendant 24 h</li></ul>
+            <button class="btn btn-primary" style="justify-content:center;margin-top:1.5rem" data-testid="plan-cta-ats">Choisir ATS Premium</button>
+          </div>
+          <div class="card plan hot" data-testid="plan-bundle">
+            <span class="badge">-21 % · le plus choisi</span>
+            <h3>Le Bundle</h3>
+            <p class="price">10,99 € <small>paiement unique</small></p>
+            <p class="old">13,98 €</p>
+            <ul><li>Audit LinkedIn Premium</li><li>Analyse ATS Premium</li><li>3 analyses ATS supplémentaires</li><li>Priorité de traitement</li><li>Idéal multi-candidatures</li></ul>
+            <button class="btn btn-violet" style="justify-content:center;margin-top:1.5rem" data-testid="plan-cta-bundle">Obtenir le bundle</button>
+          </div>
+        </div>
+        <p class="mono" style="text-align:center;font-size:0.7rem;color:var(--mute);margin-top:2rem">Paiement unique, sans abonnement · Accès immédiat · Résultats disponibles 24 h</p>
+      </div>
+    </section>
+
+    <section class="section band">
+      <div class="wrap">
+        <p class="eyebrow">Pourquoi le bundle</p>
+        <h2>Les recruteurs croisent LinkedIn et CV. Systématiquement.</h2>
+        <div class="stats">
+          <div class="stat"><b>83 %</b><p>des recruteurs consultent LinkedIn avant de contacter un candidat</p></div>
+          <div class="stat"><b>75 %</b><p>des CV sont filtrés par un ATS avant d'être lus par un humain</p></div>
+          <div class="stat"><b>×2</b><p>de réponses en plus quand profil et CV racontent la même histoire</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section style="background:var(--violet);padding:5rem 0">
+      <div class="wrap">
+        <h2 style="color:#fff;max-width:42rem">Une seule décision pour aligner toute votre candidature.</h2>
+        <a class="btn" href="#plans" style="background:#fff;color:var(--violet);margin-top:2rem" data-testid="bundle-final-cta">Obtenir le bundle — 10,99 € →</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <a class="logo" href="index.html">Profilo<span>.</span></a>
+      <p><a href="politique-confidentialite.html" style="color:var(--mute)">Politique de confidentialité</a> · Maquette HTML/CSS · Données fictives</p>
+    </div>
+  </footer>
+
+  <button class="theme-toggle" id="theme-toggle" aria-label="Changer de thème" data-testid="theme-toggle">☾</button>
+  <script>
+    (function(){var b=document.getElementById('theme-toggle');function apply(t){document.documentElement.setAttribute('data-theme',t);localStorage.setItem('profilo-theme',t);b.textContent=t==='dark'?'☀':'☾';}apply(localStorage.getItem('profilo-theme')||'light');b.addEventListener('click',function(){apply(document.documentElement.getAttribute('data-theme')==='dark'?'light':'dark');});})();
+    document.querySelectorAll('.plan button').forEach(function(btn){btn.addEventListener('click',function(){alert('Paiement simulé (démo) — aucun paiement réel.');});});
+  </script>
+</body>
+</html>
